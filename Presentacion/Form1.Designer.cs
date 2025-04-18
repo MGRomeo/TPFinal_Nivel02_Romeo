@@ -31,56 +31,149 @@ namespace Presentacion
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pnlDerecho = new System.Windows.Forms.Panel();
+            this.pnlCodigo = new System.Windows.Forms.Panel();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblTextoPrecio = new System.Windows.Forms.Label();
+            this.lblTextoCodigo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblTextoDescripcion = new System.Windows.Forms.Label();
             this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.lblTextoDescripcion = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscarAvanzado = new FontAwesome.Sharp.IconButton();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.lblCampo = new System.Windows.Forms.Label();
+            this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
+            this.rbtnAvanzado = new System.Windows.Forms.RadioButton();
+            this.rbtnRapido = new System.Windows.Forms.RadioButton();
+            this.cbxCriterio = new System.Windows.Forms.ComboBox();
+            this.cbxCampo = new System.Windows.Forms.ComboBox();
+            this.txtFiltroRapido = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiarFiltro = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnBorrar = new FontAwesome.Sharp.IconButton();
+            this.btnModificar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.pnlDerecho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
+            this.pnlCodigo.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
+            this.pnlSuperior.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.AllowUserToAddRows = false;
+            this.dgvArticulos.AllowUserToDeleteRows = false;
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(3, 15);
+            this.dgvArticulos.Location = new System.Drawing.Point(19, 34);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(614, 386);
+            this.dgvArticulos.Size = new System.Drawing.Size(436, 377);
             this.dgvArticulos.TabIndex = 1;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pnlDerecho
             // 
             this.pnlDerecho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDerecho.Controls.Add(this.pnlCodigo);
+            this.pnlDerecho.Controls.Add(this.label2);
             this.pnlDerecho.Controls.Add(this.panel1);
             this.pnlDerecho.Controls.Add(this.pbxImagenUrl);
-            this.pnlDerecho.Location = new System.Drawing.Point(649, 145);
+            this.pnlDerecho.Location = new System.Drawing.Point(649, 147);
             this.pnlDerecho.Name = "pnlDerecho";
-            this.pnlDerecho.Size = new System.Drawing.Size(346, 426);
+            this.pnlDerecho.Size = new System.Drawing.Size(346, 468);
             this.pnlDerecho.TabIndex = 2;
             // 
-            // pbxImagenUrl
+            // pnlCodigo
             // 
-            this.pbxImagenUrl.Location = new System.Drawing.Point(13, 14);
-            this.pbxImagenUrl.Name = "pbxImagenUrl";
-            this.pbxImagenUrl.Size = new System.Drawing.Size(320, 320);
-            this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagenUrl.TabIndex = 0;
-            this.pbxImagenUrl.TabStop = false;
+            this.pnlCodigo.BackColor = System.Drawing.Color.Silver;
+            this.pnlCodigo.Controls.Add(this.lblPrecio);
+            this.pnlCodigo.Controls.Add(this.lblCodigo);
+            this.pnlCodigo.Controls.Add(this.lblTextoPrecio);
+            this.pnlCodigo.Controls.Add(this.lblTextoCodigo);
+            this.pnlCodigo.Location = new System.Drawing.Point(13, 412);
+            this.pnlCodigo.Name = "pnlCodigo";
+            this.pnlCodigo.Size = new System.Drawing.Size(319, 51);
+            this.pnlCodigo.TabIndex = 3;
             // 
-            // pnlSuperior
+            // lblPrecio
             // 
-            this.pnlSuperior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSuperior.Location = new System.Drawing.Point(13, 38);
-            this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(982, 95);
-            this.pnlSuperior.TabIndex = 3;
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblPrecio.Location = new System.Drawing.Point(154, 21);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(0, 21);
+            this.lblPrecio.TabIndex = 4;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCodigo.Location = new System.Drawing.Point(3, 21);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(0, 21);
+            this.lblCodigo.TabIndex = 2;
+            // 
+            // lblTextoPrecio
+            // 
+            this.lblTextoPrecio.AutoSize = true;
+            this.lblTextoPrecio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTextoPrecio.Location = new System.Drawing.Point(154, 0);
+            this.lblTextoPrecio.Name = "lblTextoPrecio";
+            this.lblTextoPrecio.Size = new System.Drawing.Size(60, 21);
+            this.lblTextoPrecio.TabIndex = 3;
+            this.lblTextoPrecio.Text = "Precio :";
+            // 
+            // lblTextoCodigo
+            // 
+            this.lblTextoCodigo.AutoSize = true;
+            this.lblTextoCodigo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTextoCodigo.Location = new System.Drawing.Point(3, 0);
+            this.lblTextoCodigo.Name = "lblTextoCodigo";
+            this.lblTextoCodigo.Size = new System.Drawing.Size(67, 21);
+            this.lblTextoCodigo.TabIndex = 1;
+            this.lblTextoCodigo.Text = "Código :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(100, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 32);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Información";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblDescripcion);
+            this.panel1.Controls.Add(this.lblTextoDescripcion);
+            this.panel1.Location = new System.Drawing.Point(13, 360);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(319, 51);
+            this.panel1.TabIndex = 1;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblDescripcion.Location = new System.Drawing.Point(3, 21);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(0, 21);
+            this.lblDescripcion.TabIndex = 2;
             // 
             // lblTextoDescripcion
             // 
@@ -92,39 +185,262 @@ namespace Presentacion
             this.lblTextoDescripcion.TabIndex = 1;
             this.lblTextoDescripcion.Text = "Descripción : ";
             // 
-            // lblDescripcion
+            // pbxImagenUrl
             // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDescripcion.Location = new System.Drawing.Point(3, 21);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(0, 21);
-            this.lblDescripcion.TabIndex = 2;
+            this.pbxImagenUrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxImagenUrl.Location = new System.Drawing.Point(12, 34);
+            this.pbxImagenUrl.Name = "pbxImagenUrl";
+            this.pbxImagenUrl.Size = new System.Drawing.Size(320, 320);
+            this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagenUrl.TabIndex = 0;
+            this.pbxImagenUrl.TabStop = false;
             // 
-            // panel1
+            // pnlSuperior
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.lblDescripcion);
-            this.panel1.Controls.Add(this.lblTextoDescripcion);
-            this.panel1.Location = new System.Drawing.Point(13, 349);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(319, 51);
-            this.panel1.TabIndex = 1;
+            this.pnlSuperior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSuperior.Controls.Add(this.btnBuscarAvanzado);
+            this.pnlSuperior.Controls.Add(this.lblFiltro);
+            this.pnlSuperior.Controls.Add(this.lblCriterio);
+            this.pnlSuperior.Controls.Add(this.lblCampo);
+            this.pnlSuperior.Controls.Add(this.txtFiltroAvanzado);
+            this.pnlSuperior.Controls.Add(this.rbtnAvanzado);
+            this.pnlSuperior.Controls.Add(this.rbtnRapido);
+            this.pnlSuperior.Controls.Add(this.cbxCriterio);
+            this.pnlSuperior.Controls.Add(this.cbxCampo);
+            this.pnlSuperior.Controls.Add(this.txtFiltroRapido);
+            this.pnlSuperior.Location = new System.Drawing.Point(13, 38);
+            this.pnlSuperior.Name = "pnlSuperior";
+            this.pnlSuperior.Size = new System.Drawing.Size(982, 103);
+            this.pnlSuperior.TabIndex = 3;
+            // 
+            // btnBuscarAvanzado
+            // 
+            this.btnBuscarAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnBuscarAvanzado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarAvanzado.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarAvanzado.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarAvanzado.IconColor = System.Drawing.Color.White;
+            this.btnBuscarAvanzado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarAvanzado.IconSize = 20;
+            this.btnBuscarAvanzado.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnBuscarAvanzado.Location = new System.Drawing.Point(879, 54);
+            this.btnBuscarAvanzado.Name = "btnBuscarAvanzado";
+            this.btnBuscarAvanzado.Size = new System.Drawing.Size(91, 30);
+            this.btnBuscarAvanzado.TabIndex = 6;
+            this.btnBuscarAvanzado.Text = "Buscar";
+            this.btnBuscarAvanzado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarAvanzado.UseVisualStyleBackColor = false;
+            this.btnBuscarAvanzado.Click += new System.EventHandler(this.btnBuscarAvanzado_Click);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblFiltro.Location = new System.Drawing.Point(646, 58);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(49, 21);
+            this.lblFiltro.TabIndex = 11;
+            this.lblFiltro.Text = "Filtro:";
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCriterio.Location = new System.Drawing.Point(443, 57);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(65, 21);
+            this.lblCriterio.TabIndex = 10;
+            this.lblCriterio.Text = "Criterio:";
+            // 
+            // lblCampo
+            // 
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCampo.Location = new System.Drawing.Point(262, 58);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(63, 21);
+            this.lblCampo.TabIndex = 9;
+            this.lblCampo.Text = "Campo:";
+            // 
+            // txtFiltroAvanzado
+            // 
+            this.txtFiltroAvanzado.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(701, 55);
+            this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
+            this.txtFiltroAvanzado.Size = new System.Drawing.Size(164, 29);
+            this.txtFiltroAvanzado.TabIndex = 8;
+            // 
+            // rbtnAvanzado
+            // 
+            this.rbtnAvanzado.AutoSize = true;
+            this.rbtnAvanzado.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.rbtnAvanzado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbtnAvanzado.Location = new System.Drawing.Point(266, 15);
+            this.rbtnAvanzado.Name = "rbtnAvanzado";
+            this.rbtnAvanzado.Size = new System.Drawing.Size(165, 29);
+            this.rbtnAvanzado.TabIndex = 7;
+            this.rbtnAvanzado.TabStop = true;
+            this.rbtnAvanzado.Text = "Filtro Avanzado:";
+            this.rbtnAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // rbtnRapido
+            // 
+            this.rbtnRapido.AutoSize = true;
+            this.rbtnRapido.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.rbtnRapido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbtnRapido.Location = new System.Drawing.Point(16, 13);
+            this.rbtnRapido.Name = "rbtnRapido";
+            this.rbtnRapido.Size = new System.Drawing.Size(141, 29);
+            this.rbtnRapido.TabIndex = 6;
+            this.rbtnRapido.TabStop = true;
+            this.rbtnRapido.Text = "Filtro Rápido:";
+            this.rbtnRapido.UseVisualStyleBackColor = true;
+            this.rbtnRapido.CheckedChanged += new System.EventHandler(this.rbtnRapido_CheckedChanged);
+            // 
+            // cbxCriterio
+            // 
+            this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCriterio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbxCriterio.FormattingEnabled = true;
+            this.cbxCriterio.Location = new System.Drawing.Point(511, 55);
+            this.cbxCriterio.Name = "cbxCriterio";
+            this.cbxCriterio.Size = new System.Drawing.Size(121, 29);
+            this.cbxCriterio.TabIndex = 4;
+            // 
+            // cbxCampo
+            // 
+            this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCampo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbxCampo.FormattingEnabled = true;
+            this.cbxCampo.Location = new System.Drawing.Point(328, 54);
+            this.cbxCampo.Name = "cbxCampo";
+            this.cbxCampo.Size = new System.Drawing.Size(103, 29);
+            this.cbxCampo.TabIndex = 3;
+            this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
+            // 
+            // txtFiltroRapido
+            // 
+            this.txtFiltroRapido.Location = new System.Drawing.Point(16, 53);
+            this.txtFiltroRapido.Name = "txtFiltroRapido";
+            this.txtFiltroRapido.Size = new System.Drawing.Size(149, 29);
+            this.txtFiltroRapido.TabIndex = 1;
+            this.txtFiltroRapido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnLimpiarFiltro);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dgvArticulos);
-            this.panel2.Location = new System.Drawing.Point(13, 145);
+            this.panel2.Location = new System.Drawing.Point(163, 147);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(624, 425);
+            this.panel2.Size = new System.Drawing.Size(481, 468);
             this.panel2.TabIndex = 4;
+            // 
+            // btnLimpiarFiltro
+            // 
+            this.btnLimpiarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnLimpiarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarFiltro.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.btnLimpiarFiltro.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarFiltro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarFiltro.IconSize = 26;
+            this.btnLimpiarFiltro.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnLimpiarFiltro.Location = new System.Drawing.Point(310, 417);
+            this.btnLimpiarFiltro.Name = "btnLimpiarFiltro";
+            this.btnLimpiarFiltro.Size = new System.Drawing.Size(145, 40);
+            this.btnLimpiarFiltro.TabIndex = 6;
+            this.btnLimpiarFiltro.Text = "Eliminar Filtros";
+            this.btnLimpiarFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiarFiltro.UseVisualStyleBackColor = false;
+            this.btnLimpiarFiltro.Click += new System.EventHandler(this.btnLimpiarFiltro_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(195, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 32);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Artículos";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnBorrar);
+            this.panel3.Controls.Add(this.btnModificar);
+            this.panel3.Controls.Add(this.btnAgregar);
+            this.panel3.Location = new System.Drawing.Point(13, 147);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(144, 468);
+            this.panel3.TabIndex = 5;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnBorrar.IconColor = System.Drawing.Color.White;
+            this.btnBorrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBorrar.IconSize = 26;
+            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnBorrar.Location = new System.Drawing.Point(16, 370);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(109, 40);
+            this.btnBorrar.TabIndex = 5;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pencil;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 24;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnModificar.Location = new System.Drawing.Point(16, 202);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(109, 40);
+            this.btnModificar.TabIndex = 4;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregar.IconColor = System.Drawing.Color.White;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 26;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(16, 34);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(109, 40);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 649);
+            this.ClientSize = new System.Drawing.Size(1010, 631);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlSuperior);
             this.Controls.Add(this.pnlDerecho);
@@ -135,10 +451,17 @@ namespace Presentacion
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.pnlDerecho.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
+            this.pnlDerecho.PerformLayout();
+            this.pnlCodigo.ResumeLayout(false);
+            this.pnlCodigo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
+            this.pnlSuperior.ResumeLayout(false);
+            this.pnlSuperior.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -153,5 +476,27 @@ namespace Presentacion
         private System.Windows.Forms.Label lblTextoDescripcion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtFiltroRapido;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtFiltroAvanzado;
+        private System.Windows.Forms.RadioButton rbtnAvanzado;
+        private System.Windows.Forms.RadioButton rbtnRapido;
+        private System.Windows.Forms.ComboBox cbxCriterio;
+        private System.Windows.Forms.ComboBox cbxCampo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.Panel pnlCodigo;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Label lblTextoCodigo;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblTextoPrecio;
+        private FontAwesome.Sharp.IconButton btnLimpiarFiltro;
+        private FontAwesome.Sharp.IconButton btnBorrar;
+        private FontAwesome.Sharp.IconButton btnModificar;
+        private FontAwesome.Sharp.IconButton btnAgregar;
+        private FontAwesome.Sharp.IconButton btnBuscarAvanzado;
     }
 }
