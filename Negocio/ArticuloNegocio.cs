@@ -28,40 +28,92 @@ namespace Negocio
                     articulo.Marca = (string)datos.Lector["Marca"];
                     articulo.Categoria = (string)datos.Lector["Categoria"];
                     articulo.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    articulo.Precio = datos.Lector.GetDecimal(7);
+                    articulo.Precio = (decimal)(datos.Lector["Precio"]);
 
                     listaArticulo.Add(articulo);
                 }
                 return listaArticulo;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
         }
 
-        public List<Articulo> Listar()
+        public List<Articulo> ListarArticulos()
         {
 
             try
             {
-                datos.SetearConsulta("select a.Id, a.Codigo, a.Nombre, a.Descripcion, m.Descripcion Marca, c.Descripcion Categoria, a.ImagenUrl, a.Precio from Articulos a inner join MARCAS m on a.IdMarca = m.Id inner join CATEGORIAS c on a.IdCategoria = c.Id");
+                datos.SetearConsulta("select a.Id, a.Codigo, a.Nombre, a.Descripcion, ISNULL(m.Descripcion, 'Sin Marca') Marca,ISNULL(c.Descripcion, 'Sin Categoría') Categoria, a.ImagenUrl, a.Precio from Articulos a left join MARCAS m on a.IdMarca = m.Id left join CATEGORIAS c on a.IdCategoria = c.Id");
                 datos.Leer();
 
                 return CargarListaArticulo(datos);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             finally
             {
                 datos.CerrarConexion();
             }
+        }
+
+        public Dictionary<int, string> ListaMarca()
+        {
+            try
+            {
+                Dictionary<int, string> listaMarcas = new Dictionary<int, string>();
+                datos.SetearConsulta("select Id, descripcion from Marcas");
+                datos.Leer();
+                listaMarcas.Add(0,"");
+                while (datos.Lector.Read())
+                {
+                    int id = datos.Lector.GetInt32(0);
+                    string descripcion = (string)datos.Lector["descripcion"];
+                    listaMarcas.Add(id,descripcion);
+                }
+                datos.CerrarConexion();
+
+                return listaMarcas;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public Dictionary<int, string> ListaCategoria()
+        {
+            try
+            {
+                Dictionary<int,string> listaCategoria = new Dictionary<int, string>();
+                datos.SetearConsulta("select id, descripcion from Categorias");
+                datos.Leer();
+                listaCategoria.Add(0, "");
+                while (datos.Lector.Read())
+                {
+                    int id = datos.Lector.GetInt32(0);
+                    string descripcion = (string)datos.Lector["descripcion"];
+                    listaCategoria.Add(id,descripcion);
+                }
+                datos.CerrarConexion();
+
+                return listaCategoria;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
         
         public List<Articulo> BusquedaAvanzada(string campo, string criterio, string filtro)
@@ -140,19 +192,111 @@ namespace Negocio
                 datos.Leer();
                 CargarListaArticulo(datos);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             return listaArticulo;
         }
 
-        public void Agregar()
+        public void AgregarArticulo(Articulo articulo, int IdMarca, int IdCategoria)
         {
+            try
+            {
+                datos.SetearConsulta($"insert into ARTICULOS values('{articulo.Codigo}','{articulo.Nombre}','{articulo.Descripcion}',{IdMarca},{IdCategoria},'{articulo.ImagenUrl}',{articulo.Precio})");
+                datos.Escribir();
+                datos.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
         }
 
+        public void AgregarMarcaCategoria(string tabla, string nombre)
+        {
+            try
+            {
+                datos.SetearConsulta($"insert into {tabla} values('{nombre}')");
+                datos.Escribir();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                datos.CerrarConexion();
+            }
+        }
+
+        public void ModificarArticulo(Articulo articulo, int IdMarca, int IdCategoria)
+        {
+            try
+            {
+                datos.SetearConsulta($"update Articulos set Nombre= '{articulo.Nombre}', Codigo= '{articulo.Codigo}', Descripcion= '{articulo.Descripcion}', ImagenUrl= '{articulo.ImagenUrl}', IdMarca= {IdMarca}, IdCategoria= {IdCategoria}, Precio= @precio where id = {articulo.Id}");
+
+                datos.SetearParametros("@precio", articulo.Precio);
+
+                datos.Escribir();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+
+            }
+
+        }
+
+        public void ModificarMarcaCategoria(int id, string nombreNuevo, string bandera)
+        {
+            try
+            {
+                datos.SetearConsulta($"update {bandera} set descripcion = '{nombreNuevo}' where Id = {id}");
+
+                datos.Escribir();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+        }
+
+        public void Borrar(int id, string tabla)
+        {
+            try
+            {
+                datos.SetearConsulta($"delete from {tabla} where id = {id}");
+                datos.Escribir();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+
+        }
     }
 }

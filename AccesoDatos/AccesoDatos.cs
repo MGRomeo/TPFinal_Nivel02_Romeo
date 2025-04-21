@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+
 namespace Datos
 {
     public class AccesoDatos
@@ -32,6 +33,12 @@ namespace Datos
             comando.CommandText = consulta;
         }
 
+        // muy recomendado para que me tome los numeros con coma
+        public void SetearParametros(string nombreParametro, object valor)
+        {
+            comando.Parameters.AddWithValue(nombreParametro, valor);
+        }
+
         public void Leer()
         {
             comando.Connection = conexion;
@@ -40,10 +47,10 @@ namespace Datos
                 conexion.Open();
                 lector = comando.ExecuteReader();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -55,10 +62,10 @@ namespace Datos
                 conexion.Open();
                 comando.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
         }

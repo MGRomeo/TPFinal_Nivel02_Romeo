@@ -29,7 +29,7 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            this.dgvListado = new System.Windows.Forms.DataGridView();
             this.pnlDerecho = new System.Windows.Forms.Panel();
             this.pnlCodigo = new System.Windows.Forms.Panel();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -52,36 +52,43 @@ namespace Presentacion
             this.cbxCriterio = new System.Windows.Forms.ComboBox();
             this.cbxCampo = new System.Windows.Forms.ComboBox();
             this.txtFiltroRapido = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnldgv = new System.Windows.Forms.Panel();
             this.btnLimpiarFiltro = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnBorrar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            this.gbxAcciones = new System.Windows.Forms.GroupBox();
+            this.gbxListado = new System.Windows.Forms.GroupBox();
+            this.btnListarArticulos = new FontAwesome.Sharp.IconButton();
+            this.btnListarCategorias = new FontAwesome.Sharp.IconButton();
+            this.btnListarMarcas = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.pnlDerecho.SuspendLayout();
             this.pnlCodigo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
             this.pnlSuperior.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnldgv.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.gbxAcciones.SuspendLayout();
+            this.gbxListado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvArticulos
+            // dgvListado
             // 
-            this.dgvArticulos.AllowUserToAddRows = false;
-            this.dgvArticulos.AllowUserToDeleteRows = false;
-            this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(19, 34);
-            this.dgvArticulos.Name = "dgvArticulos";
-            this.dgvArticulos.ReadOnly = true;
-            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(436, 377);
-            this.dgvArticulos.TabIndex = 1;
-            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
+            this.dgvListado.AllowUserToAddRows = false;
+            this.dgvListado.AllowUserToDeleteRows = false;
+            this.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListado.Location = new System.Drawing.Point(19, 34);
+            this.dgvListado.Name = "dgvListado";
+            this.dgvListado.ReadOnly = true;
+            this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListado.Size = new System.Drawing.Size(436, 377);
+            this.dgvListado.TabIndex = 1;
+            this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pnlDerecho
             // 
@@ -326,23 +333,23 @@ namespace Presentacion
             this.txtFiltroRapido.TabIndex = 1;
             this.txtFiltroRapido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // panel2
+            // pnldgv
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnLimpiarFiltro);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.dgvArticulos);
-            this.panel2.Location = new System.Drawing.Point(163, 147);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(481, 468);
-            this.panel2.TabIndex = 4;
+            this.pnldgv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnldgv.Controls.Add(this.btnLimpiarFiltro);
+            this.pnldgv.Controls.Add(this.lblTitulo);
+            this.pnldgv.Controls.Add(this.dgvListado);
+            this.pnldgv.Location = new System.Drawing.Point(163, 147);
+            this.pnldgv.Name = "pnldgv";
+            this.pnldgv.Size = new System.Drawing.Size(481, 468);
+            this.pnldgv.TabIndex = 4;
             // 
             // btnLimpiarFiltro
             // 
             this.btnLimpiarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.btnLimpiarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarFiltro.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarFiltro.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.btnLimpiarFiltro.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnLimpiarFiltro.IconColor = System.Drawing.Color.White;
             this.btnLimpiarFiltro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarFiltro.IconSize = 26;
@@ -356,23 +363,22 @@ namespace Presentacion
             this.btnLimpiarFiltro.UseVisualStyleBackColor = false;
             this.btnLimpiarFiltro.Click += new System.EventHandler(this.btnLimpiarFiltro_Click);
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(195, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Artículos";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Location = new System.Drawing.Point(186, 1);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(107, 32);
+            this.lblTitulo.TabIndex = 2;
+            this.lblTitulo.Text = "Artículos";
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnBorrar);
-            this.panel3.Controls.Add(this.btnModificar);
-            this.panel3.Controls.Add(this.btnAgregar);
+            this.panel3.Controls.Add(this.gbxListado);
+            this.panel3.Controls.Add(this.gbxAcciones);
             this.panel3.Location = new System.Drawing.Point(13, 147);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(144, 468);
@@ -388,7 +394,7 @@ namespace Presentacion
             this.btnBorrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBorrar.IconSize = 26;
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(16, 370);
+            this.btnBorrar.Location = new System.Drawing.Point(6, 130);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(109, 40);
             this.btnBorrar.TabIndex = 5;
@@ -407,7 +413,7 @@ namespace Presentacion
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 24;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnModificar.Location = new System.Drawing.Point(16, 202);
+            this.btnModificar.Location = new System.Drawing.Point(6, 79);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(109, 40);
             this.btnModificar.TabIndex = 4;
@@ -426,7 +432,7 @@ namespace Presentacion
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 26;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(16, 34);
+            this.btnAgregar.Location = new System.Drawing.Point(6, 28);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(109, 40);
             this.btnAgregar.TabIndex = 3;
@@ -435,13 +441,93 @@ namespace Presentacion
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // gbxAcciones
+            // 
+            this.gbxAcciones.Controls.Add(this.btnAgregar);
+            this.gbxAcciones.Controls.Add(this.btnBorrar);
+            this.gbxAcciones.Controls.Add(this.btnModificar);
+            this.gbxAcciones.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbxAcciones.Location = new System.Drawing.Point(11, 234);
+            this.gbxAcciones.Name = "gbxAcciones";
+            this.gbxAcciones.Size = new System.Drawing.Size(121, 177);
+            this.gbxAcciones.TabIndex = 6;
+            this.gbxAcciones.TabStop = false;
+            this.gbxAcciones.Text = "Acciones";
+            // 
+            // gbxListado
+            // 
+            this.gbxListado.Controls.Add(this.btnListarArticulos);
+            this.gbxListado.Controls.Add(this.btnListarCategorias);
+            this.gbxListado.Controls.Add(this.btnListarMarcas);
+            this.gbxListado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbxListado.Location = new System.Drawing.Point(11, 34);
+            this.gbxListado.Name = "gbxListado";
+            this.gbxListado.Size = new System.Drawing.Size(121, 177);
+            this.gbxListado.TabIndex = 7;
+            this.gbxListado.TabStop = false;
+            this.gbxListado.Text = "Listar";
+            // 
+            // btnListarArticulos
+            // 
+            this.btnListarArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnListarArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarArticulos.ForeColor = System.Drawing.Color.White;
+            this.btnListarArticulos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnListarArticulos.IconColor = System.Drawing.Color.White;
+            this.btnListarArticulos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnListarArticulos.IconSize = 26;
+            this.btnListarArticulos.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnListarArticulos.Location = new System.Drawing.Point(6, 28);
+            this.btnListarArticulos.Name = "btnListarArticulos";
+            this.btnListarArticulos.Size = new System.Drawing.Size(109, 40);
+            this.btnListarArticulos.TabIndex = 6;
+            this.btnListarArticulos.Text = "Artículos";
+            this.btnListarArticulos.UseVisualStyleBackColor = false;
+            this.btnListarArticulos.Click += new System.EventHandler(this.btnListarArticulos_Click);
+            // 
+            // btnListarCategorias
+            // 
+            this.btnListarCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnListarCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarCategorias.ForeColor = System.Drawing.Color.White;
+            this.btnListarCategorias.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnListarCategorias.IconColor = System.Drawing.Color.White;
+            this.btnListarCategorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnListarCategorias.IconSize = 26;
+            this.btnListarCategorias.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnListarCategorias.Location = new System.Drawing.Point(6, 130);
+            this.btnListarCategorias.Name = "btnListarCategorias";
+            this.btnListarCategorias.Size = new System.Drawing.Size(109, 40);
+            this.btnListarCategorias.TabIndex = 8;
+            this.btnListarCategorias.Text = "Categorias";
+            this.btnListarCategorias.UseVisualStyleBackColor = false;
+            this.btnListarCategorias.Click += new System.EventHandler(this.btnListarCategorias_Click);
+            // 
+            // btnListarMarcas
+            // 
+            this.btnListarMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnListarMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarMarcas.ForeColor = System.Drawing.Color.White;
+            this.btnListarMarcas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnListarMarcas.IconColor = System.Drawing.Color.White;
+            this.btnListarMarcas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnListarMarcas.IconSize = 24;
+            this.btnListarMarcas.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnListarMarcas.Location = new System.Drawing.Point(6, 79);
+            this.btnListarMarcas.Name = "btnListarMarcas";
+            this.btnListarMarcas.Size = new System.Drawing.Size(109, 40);
+            this.btnListarMarcas.TabIndex = 7;
+            this.btnListarMarcas.Text = "Marcas";
+            this.btnListarMarcas.UseVisualStyleBackColor = false;
+            this.btnListarMarcas.Click += new System.EventHandler(this.btnListarMarcas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 631);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnldgv);
             this.Controls.Add(this.pnlSuperior);
             this.Controls.Add(this.pnlDerecho);
             this.Image = null;
@@ -449,7 +535,7 @@ namespace Presentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestor de Artículos";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.pnlDerecho.ResumeLayout(false);
             this.pnlDerecho.PerformLayout();
             this.pnlCodigo.ResumeLayout(false);
@@ -459,26 +545,28 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnldgv.ResumeLayout(false);
+            this.pnldgv.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.gbxAcciones.ResumeLayout(false);
+            this.gbxListado.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.Panel pnlDerecho;
         private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.PictureBox pbxImagenUrl;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblTextoDescripcion;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnldgv;
         private System.Windows.Forms.TextBox txtFiltroRapido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TextBox txtFiltroAvanzado;
         private System.Windows.Forms.RadioButton rbtnAvanzado;
         private System.Windows.Forms.RadioButton rbtnRapido;
@@ -498,5 +586,10 @@ namespace Presentacion
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconButton btnBuscarAvanzado;
+        private System.Windows.Forms.GroupBox gbxListado;
+        private FontAwesome.Sharp.IconButton btnListarArticulos;
+        private FontAwesome.Sharp.IconButton btnListarCategorias;
+        private FontAwesome.Sharp.IconButton btnListarMarcas;
+        private System.Windows.Forms.GroupBox gbxAcciones;
     }
 }
